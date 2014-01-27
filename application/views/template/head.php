@@ -9,6 +9,8 @@
     <link rel="shortcut icon" type="image/x-icon" href="http://www.nova-itsolutions.com/favicon.ico">
     <!-- Bootstrap -->
     <link href="<?php echo base_url('bootstrap/css/bootstrap.min.css');?>" rel="stylesheet" media="screen">
+    <link href="<?php echo base_url('bootstrap/css/bootstrap-responsive.min.css');?>" rel="stylesheet" media="screen">
+    <link href="<?php echo base_url('bootstrap/css/routerCheck.css');?>" rel="stylesheet" media="screen">
     <script src="<?php echo base_url('bootstrap/js/jquery.min.js');?>"></script>
 <script type="text/javascript">
  $(document).ready(function () {
