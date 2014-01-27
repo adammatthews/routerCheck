@@ -1,0 +1,58 @@
+Nova IT Solutions
+-- routerCheck --
+Development Notes
+Adam Matthews
+
+v1 (14/8/13): 
+- Created page that allows the polling of the header of a URL which lets us know if it's there or not
+v1.1 (15/8/13):
+- Updated to allow router data to be stored in a JSON array in a seperate file
+- Rebuilt UI with Twitter Bootstrap to make visability better
+v1.1.2 (06/09/13)
+- Enabled 30 second page auto refresh
+v1.2  (15/10/13)
+- Ported router / site data into mySQL database on server
+- Migrated code base from flat file into MVC framework (CodeIgniter)
+v1.2.1  (16/10/13)
+- Added side navigation bar with Last Updated timestamp
+- Abstracted the refresh time to the view controller
+- Refactored check algo to the controller from the view
+v1.2.2    (16/10/13)
+- Last Response times now being stored and retrieved
+- When router offline, last good response displayed on screen
+v1.2.3  (18/10/13)
+- Abstracted checking logic from display logic
+- Created controller that can be cron'ed to update tasks
+v1.3    (18/10/13)
+- Enabled cron auto-updating of the /checker/go controller - allowing 24/7 running
+v1.3.1  (22/10/13)
+- Migrated code into template to extend pages
+- Created admin area / controller with admin nav
+- General code tidy up
+v1.3.2  (29/10/13)
+- Code tidy up and refactor (split display and check logic into different models)
+- Introduced a 'double check' for fail responses - in an attempt to stop reporting slight lags
+v1.3.3  (30/10/13)
+- Repaired a bug relating to model naming
+- Updated display to include Zendesk links
+v1.3.4	(04/12/13)
+- Added CURLINFO_CONNECT_TIME to code to monitor MS response times
+- Added Response Time to Router Overview, display in ms.
+v1.3.5	(5/12/13)
+- Added re-check button to enable manual re-checking of uptime (STILL IN TESTING)
+- Added Ticket ref launcher to side bar (9/12/13)
+v1.3.6	(10/12/13)
+- Refactored URL generation - store the full URL in the database instead of the port/ip. Allows for domain name checking. 
+- Removed duplicate client names on list (11/12/13)
+v1.3.7 (13/1/14)
+- Amended code to check for 404 errors to allow for OWA pages to be checked are online OK
+- Amended view code to allow more then one router listing per site (allow router + owa)
+v1.3.8 (14/1/14)
+- Sorting of display array by Failures first, then client name alphabetical. Pushes fails to top. 
+v1.3.9 (16/1/14)
+- HTTP Response codes now included in the display - hover over the Status to find out more. 
+
+
+
+crontab -e entry
+* * * * * /var/./cron.php --run=/checker/go
