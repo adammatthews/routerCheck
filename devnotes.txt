@@ -56,4 +56,6 @@ v1.3.10 (27/1/14)
 
 
 crontab -e entry
-* * * * * /var/./cron.php --run=/checker/go
+		* * * * * /var/./cron.php --run=/checker/go
+run: chmod 775 cron.php
+Change in cron.php: define('CRON_CI_INDEX', '/usr/share/nginx/rc_git/index.php');
