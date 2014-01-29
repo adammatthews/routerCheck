@@ -11,14 +11,14 @@
           <li><a href="#">Account Management</a></li>
         </ul>
       
-      <form target="_blank" onSubmit=" location.href = 'http://helpdesk.nova-itsolutions.com/helpdesk/tickets/' + document.getElementById('id').value; return false; ">
+      <!--<form target="_blank" onSubmit=" location.href = 'http://helpdesk.nova-itsolutions.com/helpdesk/tickets/' + document.getElementById('id').value; return false; ">
         <div class="control-group">
           <label class="control-label" for="id">Ticket Ref</label>
           <div class="controls">
             <input type="text" id="id" class=".input-small" />
           </div>
         </div>
-      </form> 
+      </form> -->
 
       <div class="well">
       <p>Hover over the ONLINE/OFFLINE section to get a description of the HTML Response code.</p>
