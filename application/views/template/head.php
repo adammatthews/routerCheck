@@ -11,7 +11,8 @@
     <link href="<?php echo base_url('bootstrap/css/bootstrap.min.css');?>" rel="stylesheet" media="screen">
     <link href="<?php echo base_url('bootstrap/css/bootstrap-responsive.min.css');?>" rel="stylesheet" media="screen">
     <link href="<?php echo base_url('bootstrap/css/routerCheck.css');?>" rel="stylesheet" media="screen">
-    <script src="<?php echo base_url('bootstrap/js/jquery.min.js');?>"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
 <script type="text/javascript">
  $(document).ready(function () {
 $("[data-toggle='tooltip']").tooltip('triger: hover');

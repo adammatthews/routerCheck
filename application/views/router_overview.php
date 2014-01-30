@@ -11,19 +11,19 @@
      <?php 
             $previousClient = '';
             $previousSite = '';
+              //Determine the ONLINE / OFFLINE status updates
+              foreach ($routers as $row){   
+              if(!$row['status_name']){
+                $class = "class='error'";
+                $status_name = "<font style='color:red'>OFFLINE</font>";
+              }
+              else{
+                $class = "";
+                $status_name = "<font style='color:green'>ONLINE</font>";
+              }
+              echo '<tr '.$class.'>';
 
-                foreach ($routers as $row){   
-                    //print_r($row);
-                if(!$row['status_name']){
-                  $class = "class='error'";
-                  $status_name = "<font style='color:red'>OFFLINE</font>";
-                }
-                else{
-                  $class = "";
-                  $status_name = "<font style='color:green'>ONLINE</font>";
-                }
-                echo '<tr '.$class.'>';
-
+              //Determine if client has multiple sites
                 if($previousClient == $row['client_name']){
                   echo '<td style="border-top:none;"></td>';
                 }
@@ -37,7 +37,7 @@
                 }
                 $previousClient = $row['client_name'];
                 
-
+                //determine if site has multiple monitors
                 if($previousSite == $row['site_name']){
                   echo '<td style="border-top:none;"></td>';
                 }
