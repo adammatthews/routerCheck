@@ -23,7 +23,7 @@ class Display_model extends CI_Model {
     {
         //query to select a line per router, grabs in the site / client info.
         $query = $this->db->query('
-            SELECT router.id AS router_id, router.url, client.name AS client_name, client.zendesk AS zendesk, site.name AS site_name, router.note
+            SELECT router.id AS router_id, router.url, client.name AS client_name, client.details AS details, site.name AS site_name, router.note
             FROM router
             RIGHT JOIN  `site` ON router.site_id = site.id
             LEFT JOIN  `client` ON site.client_id = client.id
@@ -83,7 +83,7 @@ class Display_model extends CI_Model {
            array_push($new,
               array(
                     "router_id" => $row->router_id,
-                    "zendesk" => $row->zendesk,
+                    "details" => $row->details,
                     "client_name" => $row->client_name,
                     "site_name" => $row->site_name,
                     "status_name" => $responses[$key]['type'],

@@ -28,8 +28,8 @@
                   echo '<td style="border-top:none;"></td>';
                 }
                 else{
-                  if(!empty($row['zendesk'])){
-                      echo '<td><a href="'.$row['zendesk'].'" target="_blank">'.$row['client_name'].'</a></td>';
+                  if(!empty($row['details'])){
+                      echo '<td><a href="'.$row['details'].'" target="_blank">'.$row['client_name'].'</a></td>';
                   }
                   else{
                       echo '<td>'.$row['client_name'].'</td>';                   

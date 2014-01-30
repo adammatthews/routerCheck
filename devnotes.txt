@@ -54,6 +54,9 @@ v1.3.9 (16/1/14)
 v1.3.10 (27/1/14)
 - Added sheet to handle media queries (responsive). Uploaded code to Github. 
 - (29/01/14) Removed Ticket Ref bar from left - not needed!
+v1.4 (30/1/14)
+- Introduction of online adding of clients, sites and monitors!
+
 
 crontab -e entry
 		* * * * * /var/./cron.php --run=/checker/go
