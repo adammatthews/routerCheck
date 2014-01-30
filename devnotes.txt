@@ -53,7 +53,7 @@ v1.3.9 (16/1/14)
 - HTTP Response codes now included in the display - hover over the Status to find out more. 
 v1.3.10 (27/1/14)
 - Added sheet to handle media queries (responsive). Uploaded code to Github. 
-
+- (29/01/14) Removed Ticket Ref bar from left - not needed!
 
 crontab -e entry
 		* * * * * /var/./cron.php --run=/checker/go

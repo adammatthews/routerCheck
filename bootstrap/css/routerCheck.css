@@ -23,3 +23,9 @@
 	
 
 }
+
+@media (width:1245px) and (height:609px){
+	.left_nav{
+		display: none;
+	}
+}
