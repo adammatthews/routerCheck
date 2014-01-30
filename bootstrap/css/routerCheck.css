@@ -24,8 +24,10 @@
 
 }
 
-@media (width:1245px) and (height:609px){
-	.left_nav{
-		display: none;
+@media (width: 1280px) and (height: 720px) {
+	.tv_hide{
+		position: absolute !important;
+   		top: -9999px !important;
+   		left: -9999px !important;
 	}
 }

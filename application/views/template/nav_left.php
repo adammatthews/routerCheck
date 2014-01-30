@@ -1,5 +1,5 @@
   <div class="row-fluid">
-    <div class="span2 hidden-phone">
+    <div class="span2 hidden-phone tv_hide">
       <!--Sidebar content-->
        
         <ul class="nav nav-pills nav-stacked well">
