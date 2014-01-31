@@ -37,13 +37,13 @@ class Manage_db extends CI_Model {
 
     function insert_client()
     {
-        if(!empty($this->input->post('inputClient'))){
+        if(!empty($this->input->post('inputClient'))) {
             $data = array(
                            'name' => $this->input->post('inputClient'),
                            'details' => $this->input->post('inputLink')
                         );
             $this->db->insert('client', $data);
-            return $data; 
+            return "Done!"; 
         }
     }
 
