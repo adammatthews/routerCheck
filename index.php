@@ -1,5 +1,5 @@
 <?php
-date_default_timezone_set('Europe/London');
+
 /*
  *---------------------------------------------------------------
  * APPLICATION ENVIRONMENT
@@ -18,9 +18,8 @@ date_default_timezone_set('Europe/London');
  * NOTE: If you change these, also change the error_reporting() code below
  *
  */
-define('ENVIRONMENT', 'development');
-
-
+	date_default_timezone_set("Europe/London"); 
+	define('ENVIRONMENT', 'development');
 /*
  *---------------------------------------------------------------
  * ERROR REPORTING

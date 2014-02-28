@@ -13,6 +13,7 @@ class Manage_db extends CI_Model {
     {
         // Call the Model constructor
         parent::__construct();
+        $this->load->helper('form');
     }
     
     function getClientIDs()
@@ -35,54 +36,56 @@ class Manage_db extends CI_Model {
     }
 
 
-    function insert_client()
-    {
-        if(!empty($this->input->post('inputClient'))) {
-            $data = array(
-                           'name' => $this->input->post('inputClient'),
-                           'details' => $this->input->post('inputLink')
-                        );
-            $this->db->insert('client', $data);
-            return "Done!"; 
-        }
-    }
+    // function insert_client()
+    // {
+    //     if(!empty($this->input->post('inputClient'))) {
+    //         $data = array(
+    //                        'name' => $this->input->post('inputClient'),
+    //                        'details' => $this->input->post('inputLink')
+    //                     );
+    //         $this->db->insert('client', $data);
+    //         return "Done!"; 
+    //     }
+    // }
 
-    function insert_site()
-    {
-        if(!empty($this->input->post('site_name'))){
-            $site = array(
-                           'client_id' => $this->input->post('client_id'),
-                           'name' => $this->input->post('site_name')
-                        );
-            $this->db->trans_start();
-            $this->db->insert('site', $site);
+    // function insert_site()
+    // {
+    //     if(!empty($this->input->post('site_name'))){
+    //         $site = array(
+    //                        'client_id' => $this->input->post('client_id'),
+    //                        'name' => $this->input->post('site_name')
+    //                     );
+    //         $this->db->trans_start();
+    //         $this->db->insert('site', $site);
            
-            $site_id = $this->db->insert_id();
+    //         $site_id = $this->db->insert_id();
 
-            $router = array(
-                            'site_id' => $site_id,
-                            'url' => $this->input->post('router_url'),
-                            'note' => $this->input->post('router_note')
-                        );
-            $this->db->insert('router', $router);
+    //         $router = array(
+    //                         'site_id' => $site_id,
+    //                         'url' => $this->input->post('router_url'),
+    //                         'note' => $this->input->post('router_note')
+    //                     );
+    //         $this->db->insert('router', $router);
 
-            $this->db->trans_complete();
-            return "Done"; //TODO not a good response 
-        }
-    }
+    //         $this->db->trans_complete();
+    //         return "Done"; //TODO not a good response 
+    //     }
+    // }
 
-    function insert_monitor()
-    {
-        if(!empty($this->input->post('router_url'))){
-           $router = array(
-                            'site_id' => $this->input->post('site_id'),
-                            'url' => $this->input->post('router_url'),
-                            'note' => $this->input->post('router_note')
-                        );
-            $this->db->insert('router', $router);
-            return $router; 
-        }
-    }
+    // function insert_monitor()
+    // {
+    //     if(!empty($this->input->post('router_url')))
+    //     {
+    //        $router = array(
+    //                         'site_id' => $this->input->post('site_id'),
+    //                         'url' => $this->input->post('router_url'),
+    //                         'note' => $this->input->post('router_note')
+    //                     );
+    //         $this->db->insert('router', $router);
+    //         return "Done"; 
+    //     }
+    //     return "None";
+    // }
     
 }    
 ?>

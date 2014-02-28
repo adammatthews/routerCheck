@@ -5,9 +5,10 @@ class Admin extends CI_Controller {
      function __construct()
     {
         parent::__construct();
-        $this->load->model('manage_db');
         $this->load->helper('form');        
+        $this->load->model('manage_db');
     }
+
         
     public function index()
     {
@@ -50,6 +51,7 @@ class Admin extends CI_Controller {
 
             $data['data'] = $this->manage_db->insert_site();
             $data['clients'] = $this->manage_db->getClientIDs();
+
             $this->load->view('template/head', $head);
             $this->load->view('template/nav_left');  
             $this->load->view('admin/siteAdd', $data);

@@ -1,4 +1,5 @@
 </div>
+</div>
   <div class="row-fluid">
     <div class="span12"> <center> v1.3.8 - <a href="devnotes.txt" target="_blank">Dev Notes</a> <?php //print_r($response);?> </center> 
     </div>

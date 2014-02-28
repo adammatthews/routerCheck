@@ -1,4 +1,3 @@
- <div class="span10">
       <!--Body content-->
       <table class="table table-bordered">
         <tr style="font-weight:bold;">
@@ -66,4 +65,3 @@
         }  
       </script>
       <button type="button" onclick="reCheck()">Re-Check</button>  
-      </div>

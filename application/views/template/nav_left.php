@@ -6,9 +6,17 @@
           Main
           <li><a href="<?php echo base_url();?>">Home</a></li>
           <li><a href="#">Reports</a></li>
+          
+          <?php if ($this->ion_auth->is_admin()): ?>
           Administration 
           <li><a href="<?php echo base_url('index.php/admin');?>">Dashboard</a></li>
-          <li><a href="#">Account Management</a></li>
+          <li><a href="<?php echo base_url('index.php/auth');?>">Account Management</a></li>
+          <?php endif; ?>        
+          
+          <?php if ($this->ion_auth->logged_in()): ?>
+            <li><a href="<?php echo base_url('index.php/auth/logout');?>">Log Out</a></li> 
+          <?php endif; ?>        
+        
         </ul>
       
       <!--<form target="_blank" onSubmit=" location.href = 'http://helpdesk.nova-itsolutions.com/helpdesk/tickets/' + document.getElementById('id').value; return false; ">
@@ -25,3 +33,5 @@
       <p>Error codes of 403 and below are all OK.</p>
       </div>
     </div>
+
+    <div class="span10">
