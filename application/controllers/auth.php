@@ -52,7 +52,7 @@ class Auth extends CI_Controller {
 
             $this->load->view('template/head', $head);
             $this->load->view('template/nav_left');       
-            $this->load->view('auth/index', $this->data);
+            $this->load->view('auth/auth_index', $this->data);
             $this->load->view('template/footer');   
 			// $this->_render_page('auth/index', $this->data);
 		}
