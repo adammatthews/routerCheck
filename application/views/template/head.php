@@ -28,6 +28,13 @@ $("[data-toggle='tooltip']").tooltip('triger: hover');
     <a class="brand" href="#">
         <img src="http://www.nova-itsolutions.com/gui/images/logo.png" width="100px"/> routerCheck
     </a>
+    <span style="float:right; margin-top:20px;">
+      Logged in as 
+    <?php 
+    $user = $this->ion_auth->user()->row();
+    echo $user->first_name.' '.$user->last_name;
+    ?>
+  </span>
     <ul class="nav">
       <!--<li class="active"><a href="#">Home</a></li>
       <li><a href="#">Link</a></li>

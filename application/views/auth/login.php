@@ -83,6 +83,7 @@
 <?php echo form_open("auth/login",'class="form-signin"');?>
 
       <!-- <form  action="auth/login"> -->
+      <img src="http://www.nova-itsolutions.com/gui/images/logo.png" width="100px"/>
         <h2 class="form-signin-heading">Please sign in</h2>
     <?php echo form_input($identity, '','placeholder="Username"');?>
     <?php echo form_input($password, '','placeholder="Password"');?>

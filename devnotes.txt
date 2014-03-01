@@ -58,6 +58,8 @@ v1.4 (30/1/14)
 - Introduction of online adding of clients, sites and monitors!
 v2 (28/2/14)
 - Introduced Login authentication to site, inc. admin and support user groups
+- Enabled deletion of user accounts and groups
+- Display logged in username on header
 
 crontab -e entry
 		* * * * * /var/./cron.php --run=/checker/go
