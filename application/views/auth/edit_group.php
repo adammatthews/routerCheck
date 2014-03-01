@@ -18,3 +18,4 @@
       <p><?php echo form_submit('submit', lang('edit_group_submit_btn'));?></p>
 
 <?php echo form_close();?>
+<a href="<?php echo base_url('index.php/auth/delete_group').'/'.$group->id;?>">Delete Group</a>

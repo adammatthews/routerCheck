@@ -521,7 +521,7 @@ class Auth extends CI_Controller {
 		$this->form_validation->set_rules('first_name', $this->lang->line('edit_user_validation_fname_label'), 'required|xss_clean');
 		$this->form_validation->set_rules('last_name', $this->lang->line('edit_user_validation_lname_label'), 'required|xss_clean');
 		$this->form_validation->set_rules('phone', $this->lang->line('edit_user_validation_phone_label'), 'xss_clean');
-		$this->form_validation->set_rules('company', $this->lang->line('edit_user_validation_company_label'), 'required|xss_clean');
+		$this->form_validation->set_rules('company', $this->lang->line('edit_user_validation_company_label'), 'xss_clean');
 		$this->form_validation->set_rules('groups', $this->lang->line('edit_user_validation_groups_label'), 'xss_clean');
 
 		if (isset($_POST) && !empty($_POST))
@@ -634,6 +634,38 @@ class Auth extends CI_Controller {
             $this->load->view('template/footer');
 
 		// $this->_render_page('auth/edit_user', $this->data);
+	}
+
+
+//edit a user
+
+	//added in my adammatthews
+	function delete_user($id)
+	{
+		$this->data['title'] = "Delete User";
+
+		if (!$this->ion_auth->logged_in() || (!$this->ion_auth->is_admin() && !($this->ion_auth->user()->row()->id == $id)))
+		{
+			redirect('auth', 'refresh');
+		}
+
+		$delete = $this->ion_auth->delete_user($id);
+
+			if ($delete == TRUE)
+			{
+				
+				//redirect them back to the admin page
+				$this->session->set_flashdata('message', "User Deleted");
+				if ($this->ion_auth->is_admin())
+				{
+					redirect('auth', 'refresh');
+				}
+				else
+				{
+					redirect('/', 'refresh');
+				}
+			}		
+
 	}
 
 	// create a new group
@@ -760,6 +792,34 @@ class Auth extends CI_Controller {
 		// $this->_render_page('auth/edit_group', $this->data);
 	}
 
+	//added in my adammatthews
+	function delete_group($id)
+	{
+		$this->data['title'] = "Delete Group";
+
+		if (!$this->ion_auth->logged_in() || (!$this->ion_auth->is_admin() && !($this->ion_auth->user()->row()->id == $id)))
+		{
+			redirect('auth', 'refresh');
+		}
+
+		$delete = $this->ion_auth->delete_group($id);
+
+			if ($delete == TRUE)
+			{
+				
+				//redirect them back to the admin page
+				$this->session->set_flashdata('message', "Group Deleted");
+				if ($this->ion_auth->is_admin())
+				{
+					redirect('auth', 'refresh');
+				}
+				else
+				{
+					redirect('/', 'refresh');
+				}
+			}		
+
+	}
 
 	function _get_csrf_nonce()
 	{
