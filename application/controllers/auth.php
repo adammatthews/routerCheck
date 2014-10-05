@@ -381,7 +381,15 @@ class Auth extends CI_Controller {
 			$this->data['csrf'] = $this->_get_csrf_nonce();
 			$this->data['user'] = $this->ion_auth->user($id)->row();
 
-			$this->_render_page('auth/deactivate_user', $this->data);
+
+            $head['title'] = "Deactivate User - Router Check - Nova IT Solutions";
+
+            $this->load->view('template/head', $head);
+            $this->load->view('template/nav_left');       
+            $this->load->view('auth/deactivate_user', $this->data);
+            $this->load->view('template/footer'); 
+
+			// $this->_render_page('auth/deactivate_user', $this->data);
 		}
 		else
 		{
