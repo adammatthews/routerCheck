@@ -52,7 +52,7 @@ v1.3.8 (14/1/14)
 v1.3.9 (16/1/14)
 - HTTP Response codes now included in the display - hover over the Status to find out more. 
 v1.3.10 (27/1/14)
-- Added sheet to handle media queries (responsive). Uploaded code to Github. 
+- Added sheet to handle media queries (responsive). Uploaded code to Github (private) 
 - (29/01/14) Removed Ticket Ref bar from left - not needed!
 v1.4 (30/1/14)
 - Introduction of online adding of clients, sites and monitors!
@@ -60,6 +60,8 @@ v2 (28/2/14)
 - Introduced Login authentication to site, inc. admin and support user groups
 - Enabled deletion of user accounts and groups
 - Display logged in username on header
+
+Uploaded code into GitHub public repo - 5/10/14
 
 crontab -e entry
 		* * * * * /var/./cron.php --run=/checker/go
