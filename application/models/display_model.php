@@ -124,6 +124,7 @@ class Display_model extends CI_Model {
 
 
     // Map HTML Response codes to descriptions
+    // TODO: Find way to dynamically grab these out of the HTML spec?
     function getHTMLCode($code)
     {
 

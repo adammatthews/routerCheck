@@ -35,6 +35,7 @@ class Manage_db extends CI_Model {
         return $query->result();
     }
 
+//TODO: Clear up crappy code / test working with views. 
 
     // function insert_client()
     // {

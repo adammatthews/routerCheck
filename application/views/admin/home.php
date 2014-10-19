@@ -1,3 +1,4 @@
+<!-- Admin Home page -->
  <div class="span10">
       <!--Body content-->
  <?php 
